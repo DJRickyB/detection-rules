@@ -4,8 +4,8 @@
 # 2.0.
 
 import unittest
-import kql
-from kql.ast import (
+from detection_rules import kql
+from detection_rules.kql.ast import (
     Field,
     FieldComparison,
     FieldRange,

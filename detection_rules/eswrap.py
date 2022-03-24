@@ -15,7 +15,7 @@ import elasticsearch
 from elasticsearch import Elasticsearch
 from elasticsearch.client.async_search import AsyncSearchClient
 
-import kql
+from detection_rules import kql
 from .main import root
 from .misc import add_params, client_error, elasticsearch_options, get_elasticsearch_client
 from .rule import TOMLRule

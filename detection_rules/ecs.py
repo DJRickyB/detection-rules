@@ -192,7 +192,7 @@ class KqlSchema2Eql(eql.Schema):
         return True
 
     def get_event_type_hint(self, event_type, path):
-        from kql.parser import elasticsearch_type_family
+        from detection_rules.kql.parser import elasticsearch_type_family
 
         dotted = ".".join(path)
         elasticsearch_type = self.kql_schema.get(dotted)

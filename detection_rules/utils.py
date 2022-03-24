@@ -28,7 +28,7 @@ import pytoml
 import eql.utils
 from eql.utils import load_dump, stream_json_lines
 
-import kql
+from detection_rules import kql
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(CURR_DIR)

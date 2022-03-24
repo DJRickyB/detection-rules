@@ -21,7 +21,7 @@ import click
 import yaml
 from elasticsearch import Elasticsearch
 
-from kibana.connector import Kibana
+from detection_rules.kibana.connector import Kibana
 from . import rule_loader, utils
 from .cli_utils import single_collection
 from .docs import IntegrationSecurityDocs
@@ -826,7 +826,7 @@ def rule_survey(ctx: click.Context, query, date_range, dump_file, hide_zero_coun
                 elasticsearch_client: Elasticsearch = None, kibana_client: Kibana = None):
     """Survey rule counts."""
     from eql.table import Table
-    from kibana.resources import Signal
+    from detection_rules.kibana.resources import Signal
     from .main import search_rules
 
     survey_results = []

@@ -263,7 +263,7 @@ def validate_all(fail):
 @click.option('--count', is_flag=True, help='Return a count rather than table')
 def search_rules(query, columns, language, count, verbose=True, rules: Dict[str, TOMLRule] = None, pager=False):
     """Use KQL or EQL to find matching rules."""
-    from kql import get_evaluator
+    from detection_rules.kql import get_evaluator
     from eql.table import Table
     from eql.build import get_engine
     from eql import parse_query

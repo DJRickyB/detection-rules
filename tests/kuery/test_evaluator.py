@@ -5,7 +5,7 @@
 
 import unittest
 
-import kql
+from detection_rules import kql
 
 
 class EvaluatorTests(unittest.TestCase):

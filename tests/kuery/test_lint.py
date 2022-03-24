@@ -4,7 +4,7 @@
 # 2.0.
 
 import unittest
-import kql
+from detection_rules import kql
 
 
 class LintTests(unittest.TestCase):

@@ -12,7 +12,7 @@ from pathlib import Path
 
 import eql
 
-import kql
+from detection_rules import kql
 from detection_rules import attack
 from detection_rules.version_lock import default_version_lock
 from detection_rules.rule import QueryRuleData

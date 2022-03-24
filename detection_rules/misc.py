@@ -224,7 +224,7 @@ def get_kibana_rules_map(repo='elastic/kibana', branch='master'):
 
 
 def get_kibana_rules(*rule_paths, repo='elastic/kibana', branch='master', verbose=True, threads=50):
-    """Retrieve prepackaged rules from kibana repo."""
+    """Retrieve prepackaged rules from detection_rules.kibana repo."""
     from multiprocessing.pool import ThreadPool
 
     kibana_rules = {}
@@ -301,7 +301,7 @@ def get_kibana_client(cloud_id, kibana_url, kibana_user, kibana_password, kibana
                       provider_type, provider_name, **kwargs):
     """Get an authenticated Kibana client."""
     from requests import HTTPError
-    from kibana import Kibana
+    from detection_rules.kibana import Kibana
 
     if not (cloud_id or kibana_url):
         client_error("Missing required --cloud-id or --kibana-url")
@@ -359,7 +359,7 @@ elasticsearch_options = list(client_options['elasticsearch'].values())
 def add_client(*client_type, add_to_ctx=True, add_func_arg=True):
     """Wrapper to add authed client."""
     from elasticsearch import Elasticsearch, ElasticsearchException
-    from kibana import Kibana
+    from detection_rules.kibana import Kibana
 
     def _wrapper(func):
         client_ops_dict = {}

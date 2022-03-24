@@ -6,7 +6,7 @@
 import unittest
 import eql
 
-import kql
+from detection_rules import kql
 
 
 class TestKql2Eql(unittest.TestCase):

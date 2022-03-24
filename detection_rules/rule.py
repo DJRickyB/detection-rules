@@ -10,6 +10,7 @@ import typing
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from functools import cached_property
+from importlib import resources
 from pathlib import Path
 from typing import Literal, Union, Optional, List, Any, Dict
 from uuid import uuid4
@@ -17,12 +18,12 @@ from uuid import uuid4
 import eql
 from marshmallow import ValidationError, validates_schema
 
-import kql
-from . import utils
-from .mixins import MarshmallowDataclassMixin
-from .rule_formatter import toml_write, nested_normalize
-from .schemas import SCHEMA_DIR, definitions, downgrade, get_stack_schemas
-from .utils import cached
+from detection_rules import kql
+from detection_rules import utils
+from detection_rules.mixins import MarshmallowDataclassMixin
+from detection_rules.rule_formatter import toml_write, nested_normalize
+from detection_rules.schemas import definitions, downgrade, get_stack_schemas
+from detection_rules.utils import cached
 
 _META_SCHEMA_REQ_DEFAULTS = {}
 MIN_FLEET_PACKAGE_VERSION = '7.13.0'
@@ -194,7 +195,7 @@ class BaseRuleData(MarshmallowDataclassMixin):
         version_dir.mkdir(exist_ok=True, parents=True)
 
         # expand out the jsonschema definitions
-        with (version_dir / f"master.{rule_type}.json").open("w") as f:
+        with (resources.version_dir / f"master.{rule_type}.json").open("w") as f:
             json.dump(schema, f, indent=2, sort_keys=True)
 
     def validate_query(self, meta: RuleMeta) -> None:

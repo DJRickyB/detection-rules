@@ -9,7 +9,7 @@ from typing import List, Optional, Union
 
 import eql
 
-import kql
+from detection_rules import kql
 from . import ecs, beats
 from .rule import QueryValidator, QueryRuleData, RuleMeta
 

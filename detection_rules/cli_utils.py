@@ -12,7 +12,7 @@ from typing import List, Optional
 
 import click
 
-import kql
+from detection_rules import kql
 import functools
 from . import ecs
 from .attack import matrix, tactics, build_threat_map_entry

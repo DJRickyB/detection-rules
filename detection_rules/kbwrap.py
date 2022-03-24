@@ -8,8 +8,8 @@ import uuid
 
 import click
 
-import kql
-from kibana import Signal, RuleResource
+from detection_rules import kql
+from detection_rules.kibana import Signal, RuleResource
 from .cli_utils import multi_collection
 from .main import root
 from .misc import add_params, client_error, kibana_options, get_kibana_client

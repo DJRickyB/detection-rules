@@ -8,7 +8,7 @@ import os
 import re
 from typing import List, Optional
 
-import kql
+from detection_rules import kql
 import eql
 import json
 import requests
